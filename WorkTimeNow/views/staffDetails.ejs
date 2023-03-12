@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit Staff Details</title>
+  </head>
+  <body>
+    <h1>Edit Staff Details</h1>
+    <form method="POST" action="/staff/<%= staff._id %>?_method=PUT">
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="<%= staff.name %>" required>
+      <br>
+      <label for="staffId">Staff ID:</label>
+      <input type="text" name="staffId" value="<%= staff.staffId %>" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" value="<%= staff.password %>" required>
+      <br>
+      <label for="adminaccess">Admin Access:</label>
+      <input type="checkbox" name="adminaccess" <% if (staff.adminAccess) { %>checked<% } %>>
+      <br>
+      <button type="submit">Update</button>
+    </form>
+    <br>
+    <form method="POST" action="/staff/<%= staff._id %>"?_method=DELETE">
+      <button type="submit">Delete</button>
+    </form>
+  </body>
+</html>
+

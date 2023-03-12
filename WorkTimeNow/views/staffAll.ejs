@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Staff Management</title>
+  </head>
+  <body>
+    <h1>New Staff</h1>
+    <form method="POST" action="/staff">
+      <label for="name">Name:</label>
+      <input type="text" name="name" required>
+      <br>
+      <label for="staffId">Staff ID:</label>
+      <input type="text" name="staffId" required>
+      <br>
+      <label for="password">Password:</label>
+      <input type="password" name="password" required>
+      <br>
+      <label for="adminaccess">Admin Access:</label>
+      <input type="checkbox" name="adminaccess">
+      <br>
+      <button type="submit">Submit</button>
+
+    <h1>All Staff</h1>
+    <ul>
+      <% staff.forEach(function(staff) { %>
+        <li>Name: <%= staff.name %></li>
+        <li>Staff ID: <%= staff.staffId %></li>
+        <li>Admin Access: <%= staff.adminAccess ? 'Yes' : 'No' %></li>
+
+        </form>
+        <a href="/staff/<%= staff._id %>">Click to update / Delete Staff</a>
+        <br>
+      <% }); %>
+    </ul>
+  </body>
+</html>
