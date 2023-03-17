@@ -9,7 +9,11 @@ Saw a need for a small business to have a leave tracking web app
 
 #Wireframe
 
-<img width="233" alt="image" src="https://user-images.githubusercontent.com/122983127/225801013-72d94c83-0f16-475b-886a-f3834f257726.png">
+<img width="1028" alt="Wireframe" src="https://user-images.githubusercontent.com/122983127/225801143-8bafa758-4b03-40b4-9485-c87a4adc9aa1.png">
+
+#Model Schema
+
+<img width="1028" alt="Model Schema" src="https://user-images.githubusercontent.com/122983127/225802572-d3f09244-fa84-40d1-987d-0e7a19ac6d60.png">
 
 
 <br>
