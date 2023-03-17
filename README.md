@@ -7,6 +7,11 @@ A leave tracking web app
 ## Choice of app
 Saw a need for a small business to have a leave tracking web app
 
+#Wireframe
+
+<img width="233" alt="image" src="https://user-images.githubusercontent.com/122983127/225801013-72d94c83-0f16-475b-886a-f3834f257726.png">
+
+
 <br>
 
 ## Pseudocode (How to use)
