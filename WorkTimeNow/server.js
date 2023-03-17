@@ -4,14 +4,22 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const bodyParser = require('body-parser');
+
+
 
 require('dotenv').config();
 require('./config/database');
 
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
 const staffRouter = require('./routes/staff');
+const leaveRouter = require('./routes/leave');
+const loginRouter = require('./routes/login');
+
 
 var app = express();
 
@@ -24,10 +32,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride("_method"));
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false, maxAge: 24 * 60 * 60 * 1000 } // 1 day
+}));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/staff', staffRouter);
+app.use('/staff',staffRouter);
+app.use('/staff',leaveRouter);
+app.use('/login',loginRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

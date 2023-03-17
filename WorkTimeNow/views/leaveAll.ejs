@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Record your leave taken</title>
+  </head>
+  <body>
+    <h1>Record Leave</h1>
+    <form method="POST" action="/staff/<%= staff._id %>/leave">
+      <label for="leaveType">Leave Type:</label>
+      <select name="leaveType" required>
+        <% leaveOptions.forEach(function(option) { %>
+          <option value="<%= option.leaveType %>"><%= option.leaveType %></option>
+        <% }); %>
+      </select>
+      <br>
+      <label for="startDate">Start Date:</label>
+      <input type="date" name="startDate" required>
+      <br>
+      <label for="endDate">End Date:</label>
+      <input type="date" name="endDate" required>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+    <h1>Leave Details for <%= staff.name %></h1>
+    <ul>
+      <% leaves.forEach(function(leave) { %>
+        <li>Leave Type: <%= leave.leaveType.leaveType %></li>
+        <li>Start Date: <%= leave.startDate %></li>
+        <li>End Date: <%= leave.endDate %></li>
+        <br>
+      <% }); %>
+    </ul>
+  </body>
+</html>

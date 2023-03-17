@@ -15,22 +15,35 @@
       <label for="password">Password:</label>
       <input type="password" name="password" required>
       <br>
-      <label for="adminaccess">Admin Access:</label>
-      <input type="checkbox" name="adminaccess">
+      <label for="adminAccess">Admin Access:</label>
+      <input type="checkbox" name="adminAccess" value="true">
       <br>
       <button type="submit">Submit</button>
 
-    <h1>All Staff</h1>
+      <h1>All Staff</h1>
     <ul>
       <% staff.forEach(function(staff) { %>
         <li>Name: <%= staff.name %></li>
         <li>Staff ID: <%= staff.staffId %></li>
-        <li>Admin Access: <%= staff.adminAccess ? 'Yes' : 'No' %></li>
-
-        </form>
         <a href="/staff/<%= staff._id %>">Click to update / Delete Staff</a>
         <br>
+        <li>Leave Taken:</li>
+        <ul>
+          <% staff.leave.forEach(function(leave) { %>
+            <li>
+              Leave Type: <%= leave.leaveType.leaveType %>,
+              <br>
+              Start Date: <%= leave.startDate.toDateString() %>,
+              <br>
+              End Date: <%= leave.endDate.toDateString() %>
+              <br>
+              <br>
+
+            </li>
+          <% }); %>
+        </ul>
       <% }); %>
     </ul>
   </body>
 </html>
+        
