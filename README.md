@@ -1,7 +1,7 @@
 # WorkTimeNow
 A leave tracking web app
 
-# Developing a 
+# Developing a leave tracker
  Link to the webapp :https://ruby-clear-caridea.cyclic.app
 
 ## Choice of app
